@@ -1,0 +1,385 @@
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --background: #19191b;
+    --primary: #5454d4;
+    --text: #ffffff;
+    --secondary-text: #b0b0b5;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--background);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar */
+
+.navbar {
+    width: 100%;
+    padding: 30px 8.5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+/* Logo */
+
+.logo img {
+    display: block;
+    width: 145px;
+}
+
+/* Navigation Links */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 42px;
+}
+
+.nav-links a {
+    color: #b0b0b5;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.nav-links .active {
+    color: var(--primary);
+}
+
+/* Contact Button */
+
+.contact-btn {
+    color: var(--text) !important;
+    text-decoration: none;
+    border: 1px solid #777777;
+    border-radius: 6px;
+    padding: 14px 38px;
+}
+
+/* Menu Button */
+
+.menu-btn {
+    display: none;
+}
+
+/* Hero Section */
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 8.5%;
+    min-height: 80vh;
+}
+
+/* Hero Content */
+
+.hero-content {
+    width: 48%;
+}
+
+.services-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background-color: #5454d4;
+    color: white;
+    padding: 18px 28px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* Hero Image */
+
+.hero-image {
+    width: 38%;
+    position: relative;
+    aspect-ratio: 1 / 1;
+}
+
+.hero-image img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.shape-white {
+    z-index: 1;
+    transform: rotate(25deg) scale(0.9);
+    left: 0;
+    top: -70px;
+}
+
+.shape-purple {
+    z-index: 2;
+    transform: rotate(25deg) scale(0.9);
+    left: 10px;
+    top: 20px;
+}
+
+.person {
+    z-index: 3;
+    transform: translateX(50px) scale(1.3);
+    left: 0;
+    top: 0;
+}
+
+/* Icons */
+
+.hero-image .icon {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    z-index: 4;
+}
+
+.icon-top-left {
+    top: -30px;
+    left: -30px;
+}
+
+.icon-top-right {
+    top: -30px;
+    right: -30px;
+}
+
+.icon-bottom-left {
+    bottom: -30px;
+    left: -30px;
+}
+
+.icon-bottom-right {
+    bottom: -30px;
+    right: -30px;
+}
+
+/* Why Enver Section */
+
+.why-enver {
+    padding: 70px 8.5%;
+}
+
+.why-enver-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 40px;
+}
+
+.why-enver-heading h2 {
+    width: 50%;
+    font-size: 42px;
+    line-height: 1.3;
+    margin: 0;
+}
+
+.why-enver-heading p {
+    width: 40%;
+    color: var(--secondary-text);
+    font-size: 18px;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* Video Image */
+
+.why-enver-image {
+    width: 100%;
+}
+
+.why-enver-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+/* Mobile Responsive */
+
+@media (max-width: 768px) {
+
+    /* Navbar */
+
+    .navbar {
+        padding: 25px 6%;
+        justify-content: space-between;
+    }
+
+    .logo img {
+        width: 120px;
+    }
+
+    /* Menu Button */
+
+    .menu-btn {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 6px;
+        width: 40px;
+        height: 40px;
+        padding: 8px;
+        background: transparent;
+        border: 1px solid #777;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+
+    .menu-btn span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: white;
+        border-radius: 2px;
+    }
+
+    /* Navigation Menu */
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 85px;
+        left: 6%;
+        right: 6%;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        padding: 25px;
+        background-color: #29292d;
+        border-radius: 10px;
+        z-index: 10;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links a {
+        color: white;
+    }
+
+    .nav-links .active {
+        color: var(--primary);
+    }
+
+    .nav-links .contact-btn {
+        display: block;
+        padding: 12px 25px;
+    }
+
+    /* Hero Section */
+
+    .hero {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 35px 6%;
+        min-height: auto;
+    }
+
+    .hero-content {
+        width: 100%;
+    }
+
+    .hero-content h1 {
+        font-size: 48px;
+        line-height: 1.15;
+        margin: 0 0 20px;
+    }
+
+    .hero-content p {
+        width: 100%;
+        max-width: 380px;
+        font-size: 15px;
+        line-height: 1.7;
+        margin-bottom: 25px;
+    }
+
+    .services-btn {
+        padding: 14px 22px;
+        font-size: 16px;
+    }
+
+    /* Hero Image */
+
+    .hero-image {
+        width: 85%;
+        max-width: 400px;
+        margin: 65px auto 35px;
+    }
+
+    .hero-image .icon {
+        width: 35px;
+        height: 35px;
+    }
+
+    .icon-top-left {
+        top: -25px;
+        left: -20px;
+    }
+
+    .icon-top-right {
+        top: -25px;
+        right: -20px;
+    }
+
+    .icon-bottom-left {
+        bottom: -25px;
+        left: -20px;
+    }
+
+    .icon-bottom-right {
+        bottom: -25px;
+        right: -20px;
+    }
+
+    /* Why Enver Section */
+
+    .why-enver {
+        padding: 45px 6%;
+    }
+
+    .why-enver-heading {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        margin-bottom: 30px;
+    }
+
+    .why-enver-heading h2 {
+        width: 100%;
+        font-size: 34px;
+        line-height: 1.3;
+    }
+
+    .why-enver-heading p {
+        width: 100%;
+        max-width: 400px;
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    .why-enver-image {
+        width: 100%;
+    }
+
+    .why-enver-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+}

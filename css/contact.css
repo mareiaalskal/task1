@@ -1,0 +1,187 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --background: #19191b;
+    --primary: #5454d4;
+    --text: #ffffff;
+    --secondary-text: #b0b0b5;
+}
+
+body {
+    margin: 0;
+    background-color: var(--background);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+}
+
+/* Contact Section */
+.contact-section {
+    position: relative;
+    min-height: 480px;
+    padding: 80px 8.5%;
+}
+
+/* الأيقونة العلوية */
+.contact-icon-top {
+    position: absolute;
+    top: 70px;
+    right: 8.5%;
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+/* العنوان والزر */
+.contact-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.contact-content h2 {
+    font-size: 42px;
+    line-height: 1.4;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* زر التواصل */
+.contact-btn {
+    background-color: var(--primary);
+    color: var(--text);
+    border: none;
+    border-radius: 5px;
+    padding: 16px 28px;
+    font-size: 16px;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+/* الأيقونة السفلية */
+.contact-icon-bottom {
+    position: absolute;
+    left: 8.5%;
+    bottom: 25px;
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+/* Footer */
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    padding: 30px 8.5%;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* اللوغو */
+.footer-logo img {
+    display: block;
+    width: 130px;
+    height: auto;
+}
+
+/* الروابط */
+.footer-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+}
+
+.footer-links a {
+    color: var(--secondary-text);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* حقوق النشر */
+.copyright {
+    color: var(--secondary-text);
+    font-size: 14px;
+    margin: 0;
+    white-space: nowrap;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+
+    /* Contact Section */
+    .contact-section {
+        min-height: auto;
+        padding: 40px 6%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 25px;
+    }
+
+    /* إلغاء التموضع المطلق للأيقونات */
+    .contact-icon-top,
+    .contact-icon-bottom {
+        position: static;
+        width: 40px;
+        height: 40px;
+    }
+
+    /* العنوان والزر */
+    .contact-content {
+        order: 1;
+        margin-top: 0;
+        gap: 25px;
+    }
+
+    .contact-content h2 {
+        font-size: 28px;
+        line-height: 1.4;
+    }
+
+    .contact-icon-top {
+        order: 2;
+    }
+
+    .contact-icon-bottom {
+        order: 3;
+    }
+
+    /* Footer */
+    .footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 25px;
+        padding: 30px 6%;
+    }
+
+    .footer-logo {
+        order: 1;
+    }
+
+    .footer-logo img {
+        width: 110px;
+    }
+
+    /* الروابط تحت بعض */
+    .footer-links {
+        order: 2;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+    }
+
+    /* حقوق النشر آخر شي */
+    .copyright {
+        order: 3;
+        white-space: normal;
+        font-size: 12px;
+    }
+
+}

@@ -1,0 +1,211 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --background: #19191b;
+    --primary: #5454d4;
+    --text: #ffffff;
+    --secondary-text: #b0b0b5;
+}
+
+body {
+    margin: 0;
+    background-color: var(--background);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+}
+
+/* Portfolio Section */
+.portfolio-section {
+    min-height: 100vh;
+    padding: 70px 8.5%;
+}
+
+/* العنوان والأيقونة */
+.portfolio-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.portfolio-heading h2 {
+    font-size: 42px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.heading-icon {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+/* الصور */
+.portfolio-content {
+    width: 100%;
+    overflow: hidden;
+    padding: 20px 10px 40px;
+}
+
+.portfolio-slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+
+.portfolio-image {
+    display: block;
+    width: 30%;
+    flex: 0 0 calc((100% - 50px) / 3);
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    padding: 12px;
+    background-color: #29292d;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    opacity: 0.5;
+    transform: scale(0.85);
+    transition: all 0.4s ease;
+}
+
+/* ترتيب الصور */
+.portfolio-image:nth-child(1) {
+    margin-top: 0;
+}
+
+.portfolio-image:nth-child(2) {
+    margin-top: 35px;
+}
+
+.portfolio-image:nth-child(3) {
+    margin-top: 70px;
+}
+
+/* الصورة المختارة */
+.portfolio-image.active {
+    opacity: 1;
+    transform: scale(1.1);
+    z-index: 2;
+}
+
+/* التنقل */
+.portfolio-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.portfolio-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--secondary-text);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    width: 25px;
+    border-radius: 10px;
+    background-color: var(--primary);
+}
+
+/* الأسهم مخفية على الويب */
+.portfolio-arrows {
+    display: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+
+    .portfolio-section {
+        padding: 40px 6%;
+    }
+
+    /* العنوان والأيقونة */
+    .portfolio-heading {
+        gap: 15px;
+        margin-bottom: 35px;
+    }
+
+    .portfolio-heading h2 {
+        max-width: 70%;
+        font-size: 30px;
+        line-height: 1.3;
+    }
+
+    .heading-icon {
+        width: 35px;
+        height: 35px;
+        flex-shrink: 0;
+    }
+
+    /* عرض صورة واحدة */
+    .portfolio-content {
+        padding: 15px 0;
+    }
+
+    .portfolio-slider {
+        justify-content: center;
+        gap: 0;
+    }
+
+    .portfolio-image {
+        display: none;
+        width: 100%;
+        flex: 0 0 100%;
+        margin-top: 0 !important;
+        padding: 10px;
+        opacity: 1;
+        transform: none;
+    }
+
+    .portfolio-image.active {
+        display: block;
+        transform: none;
+    }
+
+    /* أزرار التنقل */
+    .portfolio-navigation {
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 15px;
+    }
+
+    .portfolio-arrows {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 25px;
+    }
+
+    .portfolio-arrows button {
+        width: 40px;
+        height: 40px;
+        border: none;
+        border-radius: 50%;
+        background-color: var(--primary);
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    /* إخفاء النقاط على الموبايل */
+    .portfolio-dots {
+        display: none;
+    }
+}
